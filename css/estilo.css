@@ -1,0 +1,78 @@
+table, td, th{
+    border: solid 1px #000;
+}
+
+#div-form{
+    text-align: center;
+}
+
+form div {
+    margin: 20px;
+}
+
+form label{
+    display: block;
+    font-weight: bold;
+}
+
+header {
+	grid-area: header;
+    min-height: 200px;
+}
+
+.menu-esquerda {
+	grid-area: menu-esquerda;
+}
+
+.menu-direita {
+	grid-area: menu-direita;
+}
+
+main {
+	grid-area: main;
+}
+
+footer {
+	grid-area: footer;
+}
+
+.container {
+    display: grid;
+    /* grid-template-columns: 30% 50% 20%; */
+    /* grid-template-rows: 30% 50% 20%; */
+    grid-template-areas:
+        'header header header'
+        'menu-esquerda main menu-direita'
+        'footer footer footer';
+    grid-gap: 10px;
+    height: 100%;
+    width: 90%;
+    margin: auto;
+}
+
+header, main, footer, .menu-esquerda, .menu-direita {
+    background-color: #d8e5f1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+input, textarea{
+    width: 400px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+textarea{
+    height: 150px;
+}
+
+button{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+}
+
