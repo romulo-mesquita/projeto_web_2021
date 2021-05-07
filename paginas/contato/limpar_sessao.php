@@ -4,6 +4,6 @@ session_start();
 
 session_destroy();
 
-header('Location: formulario.php');
+header('Location: ?pg=contato/formulario');
 
 ?>
