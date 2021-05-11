@@ -1,3 +1,13 @@
+<?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+session_start();
+
+?>
+
 <html>
 
     <head>
@@ -20,6 +30,7 @@
                     <a href="?pg=inicio"><li>Início</li></a>
                     <a href="?pg=sobre"><li>Sobre</li></a>
                     <a href="?pg=contato/formulario"><li>Contato</li></a>
+                    <a href="?pg=login/formulario"><li>Login</li></a>
                 </ul>
             </div>
 
