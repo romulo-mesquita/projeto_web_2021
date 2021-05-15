@@ -4,7 +4,7 @@ if(!empty($_POST)){
     $usuario = $_POST["usuario"];
     $senha = $_POST["senha"];
 
-    if($usuario == "admin" && $senha == "admin123"){
+    if($usuario == "admin" && md5($senha) == md5("admin123")){
         $_SESSION["nome"] = "Alexandre";
 
 ?>

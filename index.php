@@ -30,7 +30,18 @@ session_start();
                     <a href="?pg=inicio"><li>Início</li></a>
                     <a href="?pg=sobre"><li>Sobre</li></a>
                     <a href="?pg=contato/formulario"><li>Contato</li></a>
-                    <a href="?pg=login/formulario"><li>Login</li></a>
+                    <?php 
+                        if(!isset($_SESSION["nome"])){
+                    ?>
+                        <a href="?pg=login/formulario"><li>Login</li></a>
+                    <?php
+                        }
+                        else{
+                    ?>
+                        <a href="?pg=area_restrita"><li>Área restrita</li></a>
+                    <?php
+                        }
+                    ?>
                 </ul>
             </div>
 

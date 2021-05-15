@@ -1,6 +1,6 @@
 <?php
 
-if(empty($_SESSION)){
+if(!isset($_SESSION["nome"])){
     header('Location: ?pg=login/formulario');
 }
 
@@ -10,4 +10,6 @@ if(empty($_SESSION)){
 
 <p>Bem-vindo(a), <?= $_SESSION["nome"] ?>!</p>
 
-<p><a href="?pg=login/limpar_sessao">Sair</a></p>
+<div id="btn-limpar-sessao">
+    <a href="?pg=login/limpar_sessao">Sair</a>
+</div>

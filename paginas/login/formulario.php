@@ -1,3 +1,11 @@
+<?php
+
+if(isset($_SESSION["nome"])){
+    header("Location: ?pg=area_restrita");
+}
+
+?>
+
 <div id="div-form">
     
     <h1>Login</h1>

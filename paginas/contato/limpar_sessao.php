@@ -1,6 +1,6 @@
 <?php
 
-session_destroy();
+unset($_SESSION["dados"]);
 
 header('Location: ?pg=contato/formulario');
 
