@@ -8,6 +8,23 @@ if(!empty($_POST)){
     $_SESSION["dados"][] = $_POST;
 }
 
+$nome = $_POST["nome"];
+$telefone = $_POST["telefone"];
+$email = $_POST["email"];
+$mensagem = $_POST["mensagem"];
+
+# Insert no banco de dados
+$sql = "INSERT INTO contatos (nome, telefone, email, mensagem) VALUES ('$nome', '$telefone', '$email', '$mensagem')";
+
+if(mysqli_query($conn, $sql)){
+    echo "Dados inseridos no banco!";
+}
+else{
+    echo "Erro ao inserir dados";
+}
+
+exit();
+
 ?>
 
 <table>

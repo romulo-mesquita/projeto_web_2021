@@ -6,6 +6,8 @@ error_reporting(E_ALL);
 
 session_start();
 
+require("bd/conexao.php");
+
 ?>
 
 <html>
