@@ -115,3 +115,20 @@ a{
     display: table-cell;
     vertical-align: middle;
 }
+
+.msg-cadastro-contato{
+    margin: 10px auto;
+    padding: 5px;
+}
+
+.msg-cadastro-sucesso{
+    border: 1px solid rgb(116, 197, 134);
+    background: #4eb54e;
+    color: white;
+}
+
+.msg-cadastro-erro{
+    border: 1px solid rgb(222, 45, 20);
+    background: #d85746;
+    color: white;
+}
