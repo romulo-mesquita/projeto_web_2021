@@ -7,10 +7,11 @@ if(empty($_POST)){
 $nome = $_POST["nome"];
 $telefone = $_POST["telefone"];
 $email = $_POST["email"];
+$cidade = $_POST["cidade"];
 $mensagem = $_POST["mensagem"];
 
 # Insert no banco de dados
-$sql = "INSERT INTO contatos (nome, telefone, email, mensagem) VALUES ('$nome', '$telefone', '$email', '$mensagem')";
+$sql = "INSERT INTO contatos (nome, telefone, email, cidade_id, mensagem) VALUES ('$nome', '$telefone', '$email', $cidade, '$mensagem')";
 
 if(mysqli_query($conn, $sql)){
     echo '<div class="msg-cadastro-contato msg-cadastro-sucesso">Dados inseridos no banco!</div>';
@@ -32,6 +33,8 @@ $result = mysqli_query($conn, $sql);
         <th>Telefone</th>
         <th>E-mail</th>
         <th>Mensagem</th>
+        <th>Estado</th>
+        <th>Cidade</th>
     </tr>
     <?php
         while($linha = mysqli_fetch_assoc($result)){

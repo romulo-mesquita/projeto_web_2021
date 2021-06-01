@@ -62,14 +62,19 @@ header, main, footer, .menu {
     border-radius: 5px;
 }
 
-input, textarea{
+input, textarea, select{
     width: 400px;
     height: 35px;
     border-radius: 5px;
+    border: none;
 }
 
 textarea{
     height: 150px;
+}
+
+select{
+    background-color: #fff;
 }
 
 button{
