@@ -1,7 +1,7 @@
 <?php
 
     $sqlCidades = "SELECT c.id, c.nome, e.sigla AS sigla_estado FROM cidades c INNER JOIN estados e ON e.id = c.estado_id";
-    $resultCidades = mysqli_query($conn, $sqlCidades);
+    $resultCidades = $conn->query($sqlCidades, PDO::FETCH_ASSOC);
 
 ?>
 
@@ -27,7 +27,7 @@
             <select name="cidade">
                 <option value="">Selecione a cidade...</option>
                 <?php
-                    while($linha = mysqli_fetch_assoc($resultCidades)){
+                    while($linha = $resultCidades->fetch()){
                 ?>
                     <option value="<?= $linha["id"] ?>"><?= $linha["nome"] ?> (<?= $linha["sigla_estado"] ?>)</option>
                 <?php 
