@@ -56,8 +56,16 @@ require("bd/conexao.php");
                         Caso falso: usa o valor "inicio"
                     */
                     $pg = (isset($_GET["pg"]) && !empty($_GET["pg"])) ? $_GET["pg"] : "inicio";
+                    
+                    $id = (isset($_GET["id"]) && !empty($_GET["id"]));
 
-                    include("paginas/".$pg.".php");
+                    if(isset($id)){
+                        include("paginas/".$pg.".php");
+                    }
+                    else{                        
+                        include("paginas/".$pg.".php?id=".$id);
+                    }
+                    
 
                 ?>
 
