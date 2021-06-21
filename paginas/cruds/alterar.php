@@ -20,6 +20,20 @@
             $conn->rollback();
             echo '<div class="msg-cadastro-contato msg-cadastro-erro">Erro ao alterar registro no banco: ' . $e->getMessage() . '</div>';
         }
+        $usuario = $_SESSION["nome"];
+        $acao = "Alteração do usuário '".$nome."'";
+
+        $stmt = $conn->prepare("INSERT INTO logs (usuario, acao) VALUES (:usuario, :acao)");
+
+        $bind_param = ["usuario" => $usuario, "acao" => $acao];
+
+        try {
+            $conn->beginTransaction();
+            $stmt->execute($bind_param);    
+            $conn->commit();
+        } catch(PDOExecption $e) {
+            $conn->rollback();
+        }
     
     }
 

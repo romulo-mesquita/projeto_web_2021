@@ -41,6 +41,7 @@ require("bd/conexao.php");
                         else{
                     ?>
                         <a href="?pg=area_restrita"><li>Área restrita</li></a>
+                        <a href="?pg=listar_logs"><li>Relatório de Logs</li></a>
                     <?php
                         }
                     ?>
