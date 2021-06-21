@@ -1,5 +1,5 @@
 <?php
-$sql = "SELECT us.id, us.nome, us.usuario,DATE_FORMAT(us.data_hora_criacao, '%d/%m/%Y %H:%i:%S') AS data_hora, DATE_FORMAT(us.data_hora_atualizacao, '%d/%m/%Y %H:%i:%S') AS data_hora_up
+$sql = "SELECT us.id, us.nome, us.usuario,DATE_FORMAT(us.data_hora_criacao, '%d/%m/%Y %H:%i:%S') AS data_hora_criacao, DATE_FORMAT(us.data_hora_atualizacao, '%d/%m/%Y %H:%i:%S') AS data_hora_up
         FROM usuarios us
         ORDER BY us.id DESC";
 

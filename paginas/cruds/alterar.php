@@ -3,16 +3,16 @@
     if(!isset($_SESSION["nome"])){
         header('Location: ?pg=login/formulario');
     }
-    $id = $_GET["id"];
+    $id = $_GET["id"]; 
     if(!empty($_POST)){        
         $nome = $_POST["nome"];
         $login = $_POST["login"];
         $senha = $_POST["senha"];
         
         # Insert no banco de dados
-        $stmt = $conn->prepare("UPDATE usuarios set nome = :nome, usuario = :login,  senha = :senha)");
+        $stmt = $conn->prepare("UPDATE usuarios set nome = :nome, usuario = :login,  senha = :senha, data_hora_atualizacao = :data_hora_atualizacao");
 
-        $bind_param = ["nome" => $nome, "login" => $login, "senha" => md5($senha)];
+        $bind_param = ["nome" => $nome, "login" => $login, "senha" => md5($senha), "data_hora_atualizacao" => date('Y-m-d H:i:s')];
         try {            
             $stmt->execute($bind_param);
             echo '<div class="msg-cadastro-contato msg-cadastro-sucesso">Registro alterado com sucesso!</div>';
